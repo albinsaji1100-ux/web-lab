@@ -1,0 +1,96 @@
+<html>
+<head>
+
+<style>
+h1 {
+    text-align:center;
+   }
+.bold-text {
+            font-weight:bold;
+           }
+.required::after {
+                  content:"*";
+                  color:red;
+                  font-size:20px;
+                 }
+.bgcolor {
+          background-color:lightgreen;
+         }
+
+</style>
+<title>Registration</title>
+<body>
+<I><U><B><h1>REGISTRATION FORM</h1></B></U></I>
+<form>
+<fieldset class="bgcolor">
+
+      <legend class="bold-text">User Information</legend>
+
+        <label for="name" class="required">Name:</label> &nbsp;
+        <select name="title">
+        <option value="title">Mr.</option>
+        <option value="title">Mrs.</option>
+        </select> &nbsp;
+        <input type="text" id="name" placeholder="Enter Name" required>
+
+<br><br>
+
+         <label for="gender">Gender:</label> &nbsp;  
+         <input type="radio" id="Male" name="gender"><label for="Male">Male</label> &nbsp;                                   
+         <input type="radio" id="Female" name="gender"><label for="Female">Female</label> &nbsp;
+         <input type="radio" id="Other" name="gender"><label for="Other">Other</label>
+
+
+<br><br>
+
+         <label for="gender">LANGUAGE KNOWN:</label> &nbsp;  
+         <input type="radio" id="Male" name="gender"><label for="Male">ENGLISH</label> &nbsp;                                   
+         <input type="radio" id="Female" name="gender"><label for="Female">MALAYALAM</label> &nbsp;
+         <input type="radio" id="Other" name="gender"><label for="Other">HINDI</label>
+
+<br><br>
+ <label for="name" class="required">COURSE:</label> &nbsp;
+        <select name="title">
+        <option value="title">MBA</option>
+        <option value="title">MCA</option>
+        <option value="title">MSW</option>
+        </select> &nbsp;
+
+         <label for="mobno" class="required"> Mob No. </label> &nbsp;
+         <input type="tel" id="mobno" name="mobno" placeholder="Enter mobile number">
+
+<br><br>
+
+<br><br>
+
+         <label for="mail" class="required"> Email Id: </label> &nbsp;
+         <input type="mail" id="mail" name="mail" placeholder="Enter Email Id">
+      </fieldset>
+
+
+<br>
+<hr>
+
+<label for="address">  Address: </label> &nbsp;
+<textarea id="address" name="address" rows="4" cols="40" placeholder="Enter your Address"></textarea> &nbsp;
+
+<form action="/submit-form" method="post">
+   <BR><BR>
+
+
+ 
+</div>  
+  <div style="text-align: right;">
+    <button type="submit">Submit</button>
+
+    
+    <button type="reset">Reset</button>
+</form>
+
+
+
+
+
+</body>
+</html>
+
