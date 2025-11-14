@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>form</title>
+<style>
+   body  {
+           background-color: lightgrey;
+   }
+</style>
+</head>
+
+<body>
+<h1><center>REGISTRATION FORM</center></h1>   
+<form onsubmit="return validateForm()">
+<fieldset>
+<legend>USER Information:</legend>
+
+<script>
+function validateForm() {
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var phone = document.getElementById("number").value.trim();
+    var password = document.getElementById("password").value.trim();
+    var conform_password = document.getElementById("confirm_password").value.trim();
+
+    var namePattern = /^[A-Za-z\s]+$/;
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var phonePattern = /^[0-9]{10}$/;
+    var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (name === "") {
+        alert("Please enter your name.");
+        return false;
+    } else if (!namePattern.test(name)) {
+        alert("Name must contain only letters and spaces.");
+        return false;
+    }
+
+    if (email === "") {
+        alert("Please enter your email.");
+        return false;
+    } else if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    if (password === "") {
+        alert("Please enter your password.");
+        return false;
+    } else if (!passwordPattern.test(password)) {
+        alert("Password must be at least 8 characters long and include:\n- One uppercase letter\n- One lowercase letter\n- One number\n- One special character");
+        return false;
+    }
+
+    if (conform_password === "") {
+        alert("Please enter confirm password.");
+        return false;
+    } else if (conform_password !== password) {
+        alert("Passwords do not match!");
+        return false;
+    }
+
+    if (phone === "") {
+        alert("Please enter your phone number.");
+        return false;
+    } else if (!phonePattern.test(phone)) {
+        alert("Phone number must be 10 digits only.");
+        return false;
+    }
+
+    return true; 
+}
+</script>
+
+<div>
+<label for="name">Name:</label>
+<select name="title" id="title" required>
+<option value="">Select</option>
+<option>Mr.</option>
+<option>Ms.</option>
+</select>
+<input type="text" id="name">
+</div>
+
+<br>
+
+<label for="email">Email:</label>
+<input type="email" id="email">
+
+<br><br>
+
+<label for="password">Password:</label>
+<input type="password" id="password">
+
+<br><br>
+
+<label for="confirm_password">Confirm Password:</label>
+<input type="password" id="confirm_password">
+
+<br><br>
+
+<label for="number">Phone number:</label>
+<input type="tel" id="number">
+
+<br><br>
+</fieldset>
+</form>
+
+<label for="address">Address:</label>
+<textarea id="address"></textarea>
+
+<br><br>
+
+<label>Gender:</label>
+<input type="radio" name="gender" value="male"> Male 
+<input type="radio" name="gender" value="female"> Female 
+<input type="radio" name="gender" value="other"> Other 
+
+<br><br>
+
+<label>Languages known:</label>
+<input type="checkbox" name="language" value="english"> English
+<input type="checkbox" name="language" value="malayalam"> Malayalam 
+<input type="checkbox" name="language" value="hindi"> Hindi 
+
+<br><br>
+
+<label for="course">Course:</label>
+<select name="course" id="course" required>
+<option value="">Select</option>
+<option>MBA</option>
+<option>MCA</option>
+<option>BTech</option>
+<option>MTech</option>
+</select>
+
+<br><br>
+
+<center>
+<input type="reset" value="Reset">
+<input type="submit" value="Submit" id="submitBtn">
+</center>
+
+<script>
+document.getElementById("submitBtn").addEventListener("click", function(event) {
+    if (!validateForm()) {
+        event.preventDefault(); 
+    } else {
+        alert("Form submitted successfully!");
+    }
+});
+</script>
+
+</body>
+</html>
+
